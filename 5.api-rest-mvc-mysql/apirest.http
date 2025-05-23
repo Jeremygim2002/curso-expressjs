@@ -1,0 +1,52 @@
+### Recuperar todas las películas
+GET http://localhost:3000/movies
+
+
+### Recuperar una película por id
+GET http://localhost:3000/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+
+### Recuperar todas las películas por un género
+GET http://localhost:3000/movies?genre=sci-fi
+
+
+### Probar con enviar datos incorrectos para ver las validaciones
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "title": 1,
+  "year": 2022
+}
+
+### Crear una película con POST
+POST http://localhost:3000/movies
+Content-Type: application/json
+
+{
+  "sql": "SELECT * FROM users",
+  "title": "The Godfather",
+  "year": 1980,
+  "director": "Francis Ford Coppola",
+  "duration": 175,
+  "poster": "https://img.fruugo.com/product/4/49/14441494_max.jpg",
+  "genre": [
+    "Crime",
+    "Drama"
+  ]
+}
+
+
+### Borrar una película
+DELETE http://localhost:3000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+
+
+### Actualizar SOLO UNA PARTE de una película con PATCH
+PATCH http://localhost:3000/movies/c8a7d63f-3b04-44d3-9d95-8782fd7dcfaf
+Content-Type: application/json
+
+{
+  "id": "as",
+  "title": "batman el gay",
+  "year": 2003
+}
